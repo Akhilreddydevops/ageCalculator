@@ -12,14 +12,19 @@ const calculateAge = () => {
   
     const result = document.getElementById("result");
     result.innerHTML = `You are ${Math.floor(ageInYears)} years, ${Math.floor(
-      ageInMonths % 12
-    )} months, ${Math.floor(ageInWeeks % 4)} weeks, ${Math.floor(
-      ageInDays % 7
-    )} days, ${Math.floor(ageInHours % 24)} hours, ${Math.floor(
-      ageInMinutes % 60
-    )} minutes, and ${Math.floor(ageInSeconds % 60)} seconds old.`;
-    result.classList.add("show");
-  };
+    ageInMonths % 12
+  )} months, ${Math.floor(ageInWeeks % 4)} weeks, ${Math.floor(
+    ageInDays % 7
+  )} days, ${Math.floor(ageInHours % 24)} hours, ${Math.floor(
+    ageInMinutes % 60
+  )} minutes, and ${Math.floor(ageInSeconds % 60)} seconds old.`;
+  
+  const audio = document.createElement("audio");
+  audio.src = "brahmi1.mp3";
+  audio.autoplay = true;
+  result.appendChild(audio);
+  
+  result.classList.add("show");
+};
   
   document.getElementById("calculate").addEventListener("click", calculateAge);
-  
