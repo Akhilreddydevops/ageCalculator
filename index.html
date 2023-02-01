@@ -5,20 +5,24 @@
     <title>Age Calculator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-  <body>
+  <body onload="startCamera()">
     <div class="container">
       <h2>Age Calculator</h2>
 
-      <marquee><p><b>BHOOMI PUTTINAPPUDU PUTTAV, INKA AGE KUDA KAVALA NEEKU????</b></p></marquee>
+        <br>
+        <video controls></video>
         <br>
 
-        <br>
-           
-        <!-- <div class="tenor-gif-embed" data-postid="22427368" data-share-method="host" data-aspect-ratio="1.81818" style="width:90px;height:90px;">
-          <a href="https://tenor.com/view/brahmi-king-brahmanandam-look-looking-gif-22427368">Brahmi King GIF</a>from <a href="https://tenor.com/search/brahmi-gifs">Brahmi GIFs</a>
-        </div>  -->
         
-        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <script>
+          async function startCamera() {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: true,
+        });
+        document.querySelector('video').srcObject = stream;
+      }
+        </script>
         <br>
         <br>
       <input type="date" id="birthdate">
